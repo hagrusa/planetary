@@ -1,0 +1,96 @@
+%% This is file `elsarticle-template-1-num.tex',
+%%
+%% Copyright 2009 Elsevier Ltd
+%%
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%%
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%%
+%% $Id: elsarticle-template-1-num.tex 149 2009-10-08 05:01:15Z rishi $
+%% $URL: http://lenova.river-valley.com/svn/elsbst/trunk/elsarticle-template-1-num.tex $
+%%
+\documentclass[preprint,12pt]{article}
+\usepackage[round]{natbib}  
+\bibliographystyle{mnras}
+
+\usepackage[margin=0.25in]{geometry}
+\usepackage{graphicx} % Enhanced package for including graphics/figures
+\usepackage{float} % Allows figures and tables to be floats
+\usepackage{amsmath} % Enhanced math package prepared by the American Mathematical Society
+\usepackage{amssymb} % AMS symbols package
+\usepackage{bm} % Allows you to use \bm{} to make any symbol bold
+%\usepackage{verbatim} % Allows you to include code snippets
+\usepackage{setspace} % Allows you to change the spacing between lines at different points in the document
+\usepackage{fancyvrb}
+
+\usepackage{parskip} % Allows you alter the spacing between paragraphs
+\usepackage[version=3]{mhchem}
+\usepackage{mathabx}
+\usepackage{ulem}
+\usepackage{hyperref}
+%% Use the option review to obtain double line spacing
+%% \documentclass[preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% The graphicx package provides the includegraphics command.
+\usepackage{graphicx}
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+\usepackage{lineno}
+
+\begin{document}
+
+%\begin{frontmatter}
+
+%% Title, authors and addresses
+
+\title{\vspace{-.5in} \large Formation of Phobos and Deimos via a Giant Impact}
+\author{ Harrison Agrusa \\ 
+\small Based on the paper by \cite{citron2015}}
+
+\maketitle
+
+\begin{abstract}
+Giant impacts during late stages of planet formation can explain a variety of solar system phenomenon. The most well known theory is the the formation of Earth's moon via giant impact (\cite{hartmann1975}, \cite{cameron1976}). Giant impacts can also explain Mercury's thin mantle, through large grazing impacts (\cite{asphaug2014}). A giant impact may have formed the Pluto-Charon system as well as Pluto's smaller moons (\cite{canup2011}) Finally, the motivaiton for this work is that the Martian moons, Phobos and Deimos, could have formed from a giant impact. The Mars Express mission found results consistent with the idea of in-situ formation of the Martian moons for two primary reasons (\cite{witasse2014}). First, minerals were detected on Phobos that are also found on the surface of Mars. Second, they found the density ($1.87 \text{ g cm}^{-3}$) and porosity ($\sim30\%$) of Phobos to be inconsistent with the capture model, as such an object would likely break up during capture. Furthermore, both Phobos and Deimos have nearly circular orbits and small inclinations. Although tidal forces could have circularized Phobos, the tides on Deimos are not strong enough to have circularized it. However, in the giant impact scenario, we would expect both of the moons to have circular orbits with low inclinations (\cite{rosenblatt2012}).
+
+
+In this work, the authors do a series of SPH calculations of a massive object impacting a Mars sized planets to explore the mass that would be ejected into a satellite forming disk. The initial conditions are constistent with \cite{marinova2008}, to explore whether the one giant impact could have caused the martian hemispheric dochotomy and the formation of the martian moons. The impact scenario is a Mars sized target with an iron core and an olivine mantle being hit by basalt body. The impactor has a nominal mass of  $M_{imp} = 0.026M_{\Mars}$ and impact velocity of 6 km/s. The goal of these simulations was to study the mass of the intial debris disk as a function of impactor mass, velocity, and impact angle. Previous work has inferred the total mass of past and present martian satellites, by assuming that some fraction of the elongated Martian craters formed from short-lived satellite impacts (\cite{schultz1984}). These types of estimates make a lot of assumptions and can only used as an order of magnitured estimates. Even conservative estimates of $M_{sat}$ are nearly two orders of magnitude greater than the mass Phobos, meaning that Mars likely had many satellites in the past. \cite{craddock2011} estimated that about half of the mass of a debris disk ($M_{d}$) produced by a giant impact would go into forming satellites ($M_{sat}$). In a more sophisticated study of a circum-Mars debris disk, \cite{rosenblatt2012} found that you need $M_{d}\sim 100M_{sat}$. In this work, the authors found that a Borealis-scale impactor may capable of producing a debris disk large enough to form both Phobos and Deimos, although a more sphisticated study of the debris disk formed from their simulation is necessary. 
+
+To extend their work, I will repeat some of their simulations with \verb|spheral++|, a parallel Adaptive Smoothed Particle Hydrodynamics with an oct-tree based N-body solver (\cite{spheral}). The code can model solids and fluids as well as damage and fractures. I will try to match the initial conditions as best as possible, and see how our results vary. The debris disk formed by \cite{citron2015} only contains $\sim280$ particles although they are representing Mars with $\sim3\times10^{5}$ SPH particles. I would like to repeat their simulations at higher resolution, because I think a robust result should have far more particles in the debris disk. Because \verb|spheral++| can use an adaptive smoothing length, I can have much higher resolution near the surface of Mars. With the adaptive smoothing length, I should be able to do have a higher resolution impact and debris disk for the same number (or even less) SPH particles. 
+\end{abstract}
+%
+%\begin{keyword}
+\newpage
+\bibliographystyle{mnras}
+{\footnotesize 
+\bibliography{sample}
+}
+
+
+\end{document}
+
+%%
+%% End of file `elsarticle-template-1-num.tex'.

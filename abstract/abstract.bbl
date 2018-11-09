@@ -1,0 +1,73 @@
+\begin{thebibliography}{}
+\makeatletter
+\relax
+\def\mn@urlcharsother{\let\do\@makeother \do\$\do\&\do\#\do\^\do\_\do\%\do\~}
+\def\mn@doi{\begingroup\mn@urlcharsother \@ifnextchar [ {\mn@doi@}
+  {\mn@doi@[]}}
+\def\mn@doi@[#1]#2{\def\@tempa{#1}\ifx\@tempa\@empty \href
+  {http://dx.doi.org/#2} {doi:#2}\else \href {http://dx.doi.org/#2} {#1}\fi
+  \endgroup}
+\def\mn@eprint#1#2{\mn@eprint@#1:#2::\@nil}
+\def\mn@eprint@arXiv#1{\href {http://arxiv.org/abs/#1} {{\tt arXiv:#1}}}
+\def\mn@eprint@dblp#1{\href {http://dblp.uni-trier.de/rec/bibtex/#1.xml}
+  {dblp:#1}}
+\def\mn@eprint@#1:#2:#3:#4\@nil{\def\@tempa {#1}\def\@tempb {#2}\def\@tempc
+  {#3}\ifx \@tempc \@empty \let \@tempc \@tempb \let \@tempb \@tempa \fi \ifx
+  \@tempb \@empty \def\@tempb {arXiv}\fi \@ifundefined
+  {mn@eprint@\@tempb}{\@tempb:\@tempc}{\expandafter \expandafter \csname
+  mn@eprint@\@tempb\endcsname \expandafter{\@tempc}}}
+
+\bibitem[\protect\citeauthoryear{Asphaug \& Reufer}{Asphaug \&
+  Reufer}{2014}]{asphaug2014}
+Asphaug E.,  Reufer A.,  2014, Nature Geoscience, 7, 564 EP
+
+\bibitem[\protect\citeauthoryear{{Cameron} \& {Ward}}{{Cameron} \&
+  {Ward}}{1976}]{cameron1976}
+{Cameron} A.~G.~W.,  {Ward} W.~R.,  1976, Lunar and Planetary Science
+  Conference, \href {http://adsabs.harvard.edu/abs/1976LPI.....7..120C} {7}
+
+\bibitem[\protect\citeauthoryear{Canup}{Canup}{2011}]{canup2011}
+Canup R.~M.,  2011, The Astronomical Journal, 141, 35
+
+\bibitem[\protect\citeauthoryear{Citron, Genda  \& Ida}{Citron
+  et~al.}{2015}]{citron2015}
+Citron R.~I.,  Genda H.,   Ida S.,  2015, \mn@doi [Icarus]
+  {https://doi.org/10.1016/j.icarus.2015.02.011}, 252, 334
+
+\bibitem[\protect\citeauthoryear{Craddock}{Craddock}{2011}]{craddock2011}
+Craddock R.~A.,  2011, \mn@doi [Icarus]
+  {https://doi.org/10.1016/j.icarus.2010.10.023}, 211, 1150
+
+\bibitem[\protect\citeauthoryear{Hartmann \& Davis}{Hartmann \&
+  Davis}{1975}]{hartmann1975}
+Hartmann W.~K.,  Davis D.~R.,  1975, \mn@doi [Icarus]
+  {https://doi.org/10.1016/0019-1035(75)90070-6}, 24, 504
+
+\bibitem[\protect\citeauthoryear{Marinova, Aharonson  \& Asphaug}{Marinova
+  et~al.}{2008}]{marinova2008}
+Marinova M.~M.,  Aharonson O.,   Asphaug E.,  2008, Nature, 453, 1216 EP
+
+\bibitem[\protect\citeauthoryear{{Owen}}{{Owen}}{2018}]{spheral}
+{Owen} J.~M.,  2018, {Spheral++: Coupled hydrodynamical and gravitational
+  numerical simulations}, Astrophysics Source Code Library (\mn@eprint {ascl}
+  {1806.023})
+
+\bibitem[\protect\citeauthoryear{{Rosenblatt} \& {Charnoz}}{{Rosenblatt} \&
+  {Charnoz}}{2012}]{rosenblatt2012}
+{Rosenblatt} P.,  {Charnoz} S.,  2012, \mn@doi [Icarus]
+  {10.1016/j.icarus.2012.09.009}, \href
+  {http://adsabs.harvard.edu/abs/2012Icar..221..806R} {221, 806}
+
+\bibitem[\protect\citeauthoryear{Schultz \& Lutz-Garihan}{Schultz \&
+  Lutz-Garihan}{1984}]{schultz1984}
+Schultz P.~H.,  Lutz-Garihan A.~B.,  1984, \mn@doi [Journal of Geophysical
+  Research: Solid Earth] {10.1029/JB087iS01p00A84}, 87, A84
+
+\bibitem[\protect\citeauthoryear{{Witasse} et~al.,}{{Witasse}
+  et~al.}{2014}]{witasse2014}
+{Witasse} O.,  et~al., 2014, \mn@doi [Planetary and Space Science]
+  {10.1016/j.pss.2013.08.002}, \href
+  {http://adsabs.harvard.edu/abs/2014P%26SS..102...18W} {102, 18}
+
+\makeatother
+\end{thebibliography}
