@@ -1,0 +1,29 @@
+File number		0
+Filename		mars.ss
+Mass			3.017502e-07
+Bulk radius		2.338937e-05
+Bulk density		5.939099e+06
+Position		+3.169821e-22	+4.297231e-23	-3.984742e-23
+Velocity		+1.899747e-19	+5.634201e-20	-2.272057e-19
+Spin			-7.967777e-15	+8.864865e-16	-6.418523e-15
+Major axis		+1.000000	-0.000000	+0.000000
+Inter axis		+0.000000	+0.999999	+0.001263
+Minor axis		-0.000000	-0.001263	+0.999999
+Color			2
+Aggregate ID		-1
+
+File number		1
+Filename		imp.ss
+Mass			7.845504e-09
+Bulk radius		7.346361e-06
+Bulk density		4.887498e+06
+Position		-2.205914e-05	+2.173828e-05	+4.281206e-23
+Velocity		+2.014455e-01	-2.282472e-20	-5.168869e-20
+Spin			+1.679078e-15	-4.157063e-13	+2.980155e-13
+Major axis		-0.020690	+0.999786	+0.000000
+Inter axis		+0.999786	+0.020690	+0.000000
+Minor axis		-0.000000	-0.000000	+1.000000
+Color			3
+Aggregate ID		-1
+
+BARYCENTRIC CORRECTION APPLIED
