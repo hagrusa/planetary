@@ -34,7 +34,7 @@ iMaxRung	= 1		# min step = dDelta / 2^(iMaxRung - 1)
 #
 # Output control...
 #
-iOutInterval  =  10000          #this line changed with dart_utilities.edit_sspar() 
+iOutInterval  =  1000          #this line changed with dart_utilities.edit_sspar() 
 iRedOutInterval  =  10000000          #this line changed with dart_utilities.edit_sspar() 
 iLogInterval  =  130000000         #this line changed with dart_utilities.edit_sspar() 
 iCheckInterval  =  0          #this line changed with dart_utilities.edit_sspar() 
