@@ -1,0 +1,112 @@
+# ssdraw.par
+# ==========
+#
+# Drawing parameters... (see end of file for important notes)
+#
+Frame size		800	! In pixels. Also used for view scaling.
+Light source option	0	! 0=FIX,1=LRG,2=POT,3=COL,4=PID,5=OID,6=CAM
+Light source lock	0	! For 3-5 only (color [0=all]/ID [agg: OID<0])
+Light source position	1e-5 1e-5 1e-5	! Abs or rel coords in length units or radii*
+Light source intensity	1.0	! Between 0 and 1 inclusive; can be > 1 for POV
+Camera option		0	! 0=FIX,1=LRG,2=POT,3=COL,4=PID,5=OID
+Camera lock		0	! For 3-5 only (color [0=all]/ID [agg: OID<0])
+Camera position		0 0 1e-5	! Abs or rel coords in length units or radii*
+View option		0	! 0=FIX,1=LRG,2=POT,3=COL,4=PID,5=OID,6=DIR
+View lock		0	! For 3-5 only (color [0=all]/ID [agg: OID<0])
+Look at/view direction	0 0 0	! Abs or rel coords in length units or radii*
+Focus distance		0	! In length units (-ve = mks)
+Sky vector		0 1 0	! Camera orientation, arbitrary units
+Starting view size	-2000000	! In length units (-ve for mks units; 0=min)
+View scaling criterion	0.5	! Maximum invisible fraction (or 0 to disable)
+View scaling factor	2	! Must be > 1 if scaling enabled
+Scale length by radius? 0	! 0=NO,1=YES, for options 1,4,5 above only*
+View target zoom factor	0.0	! For view options 1,4,5 only (0 disables)
+Particle shape		2	! See note below
+Particle radius scaling	1	! Must be positive
+Color override		0	! 0=disable (see colors below)
+Hide blocked objects?	0	! 0=NO,1=YES (for solid sphere objects only)
+Draw color first	0	! Draw particles of this color first (0=disable)
+#
+# *The light source/camera positions and look at/view directions are either in
+# absolute (if fixed option) or relative (if centre-of-mass/particle option)
+# coordinates.  In the case of coordinates relative to particles, the unit is
+# either the radius of the selected particle/aggregate, or the default length
+# unit, depending on the value of "Scale length by radius?".
+#
+# View motion controls (not applicable to all viewing options)...
+# (Some explanation: changes in light/camera/view position take place over a
+# number of frames determined by "Inertial control": 0 means the change is
+# instantaneous; 1 means it takes the entire movie; < 0 indicates the exact
+# number of frames to use for the transition.  If "Start at COM?" is true, the
+# initial viewpoint will be the center of mass (of the selected view color),
+# regardless of the view option.  If the LRG targeting option is selected, the
+# target must be "Min. target mass frac." times the largest mass in the final
+# frame to be used, otherwise the center of mass will be used.)
+#
+Start at COM?		0	! 0=NO,1=YES (to transition light/camera/view)
+Inertia control		0.99	! Between 0(=fast) & 1(=slow), <0: no. frames
+Min. target mass frac.	0.1	! Min. fraction of largest final mass for lock
+#
+# Gravitational potential minimum calculation parameters (POT option)...
+#
+Potentials to sample	10	! Percent of total (or -ve for absolute number)
+Potential sample order	0	! 0=random,1=file order,2=largest to smallest
+Tree opening angle	0.5	! In radians
+#
+# POV-Ray parameters...
+# (NOTE: for POV-Ray, particles of color "Draw color first", if enabled,
+# are given high transparency.)
+#
+Shape file		"povray.inc"	! Must be in POV-Ray Library_Path
+Renormalize?		1		! Use float workaround (0=NO,1=YES)
+Aspect ratio		"(16/9)"	! E.g. "(1/1)", "(4/3)", "(16/9)"
+Camera light intensity	0.2		! Between 0 and 1
+Blob threshold		0		! Values around 0.4 seem to work (0=disable)
+Highlight index		-1		! Original index (-1=disable)
+#
+# Sliding patch model parameters...
+#
+Use sliding patches?	0	! 0=NO,1=YES
+Patch width		0	! In AU (or -ve for mks units)
+Patch length		0	! Ditto
+Orbital frequency	0	! In simulation units (or -ve for mks)
+Number of replicas	0	! Must be at least 1
+Ghost color		0	! 0=use same color
+Draw patch lines?	0	! 0=NO,1=YES
+#
+# Wall model parameters...
+#
+Wall data file			! In quotes (leave blank for no walls)
+Wall time offset	0.0	! In pkd units (may be needed for moving walls)
+#
+D
+# Units (for focus distance, view size, patch dimensions, & orb freq only)...
+#
+Length unit	1.49597892e11	! In metres (1 AU = 1.49597892e11 m)
+Time unit	5.0226355648e6	! In seconds (1 yr/2 pi = 5.0226355648e6 s)
+#
+# NOTES...
+#
+# For POV-Ray users: because POV-Ray uses single precision, you must insure
+# that all lengths are mutually reasonable (i.e. don't put a camera 10 AU
+# away from a scene that only measures 1 km across).  Also, very small
+# numbers may not work.  Use normalization to fix.
+#
+# Light source/camera/view options:
+#    FIX = fixed space coordinates (absolute, not relative)
+#    LRG = relative to largest (most massive) particle/aggregate
+#    POT = relative to gravitational potential minimum of system
+#    COL = relative to center of mass of particles of given color
+#    PID = relative to particle of given particle ID
+#    OID = relative to particle/aggregate of given original ID
+#    CAM = relative to camera (light source only)
+#    DIR = orient along a fixed direction (view only)
+# (for COL,PID,OID, the given value is specified by corresponding light
+# source/camera/view lock)
+#
+# Shapes: 0=Dot,1=Solid Sphere,2=POV-Ray Sphere
+#
+# Colors: 0=BLACK,1=WHITE,2=RED,3=GREEN,4=BLUE,5=YELLOW,6=MAGENTA,7=CYAN,
+#         8=GOLD,9=PINK,10=ORANGE,11=KHAKI,12=VIOLET,13=MAROON,14=AQUA,
+#         15=NAVY,16=BLACK,17-254=INCREASING GRAY,255=WHITE
+#

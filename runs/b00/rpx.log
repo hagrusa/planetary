@@ -1,0 +1,29 @@
+File number		0
+Filename		../ceres
+Mass			4.723899e-10
+Bulk radius		3.259457e-06
+Bulk density		3.395131e+06
+Position		-5.300090e-24	+3.662923e-26	-8.893131e-22
+Velocity		-2.211768e-22	-2.134306e-22	+2.132267e-22
+Spin			-6.339447e-14	+1.587697e-14	+1.095069e-15
+Major axis		-0.000445	+1.000000	+0.000000
+Inter axis		+0.000000	-0.000000	+1.000000
+Minor axis		+1.000000	+0.000445	-0.000000
+Color			2
+Aggregate ID		-1
+
+File number		1
+Filename		../imp
+Mass			1.703999e-12
+Bulk radius		5.067083e-07
+Bulk density		3.562250e+06
+Position		-5.680000e+02	+7.181942e-21	-3.200878e-24
+Velocity		+7.100000e+02	-1.289181e-22	-2.825603e-22
+Spin			-2.112653e-14	+1.574426e-09	-5.666725e-09
+Major axis		+0.000000	+0.000000	+1.000000
+Inter axis		+1.000000	-0.000000	-0.000000
+Minor axis		+0.000000	+1.000000	-0.000000
+Color			3
+Aggregate ID		-1
+
+BARYCENTRIC CORRECTION APPLIED
