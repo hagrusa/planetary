@@ -1,0 +1,29 @@
+# rpg.par
+# =======
+#
+# Rubble pile parameters...
+#
+# MUST specify one of: bulk semi-axes OR BOTH number of particles AND particle
+# radius; bulk density OR particle density; number of particles OR particle
+# radius. Missing parameters are estimated from theoretical packing efficiency.
+#
+Bulk semi-axes		-1 -1 -1 	# in m (use -ve values for axis ratios)
+Bulk density		2000		# in kg/m^3
+Number of particles	200000		# this is only a hint
+Color			3		# see below
+Particle radius		8000		# in m
+Particle radius scaling	0.99		# any positive value
+Particle max speed	0.1		# in units of escape speed (ICs only)
+Particle density	0		# in kg/m^3
+Initial spin period	0		# in h, around z-axis (0=no spin)
+Aggregate ID		-1		# -1=none
+Output file		"rpg.ss"
+#
+# Color scheme:
+#
+# 0=BLACK (reserved), 1=WHITE, 2=RED (Jupiter), 3=GREEN (planetesimal),
+# 4=BLUE, 5=YELLOW (Sun), 6=MAGENTA (Uranus), 7=CYAN (Neptune), 8=GOLD,
+# 9=PINK, 10=ORANGE, 11=KHAKI (Saturn), 12=VIOLET, 13=MAROON, 14=AQUA,
+# 15=NAVY, 16=BLACK (reserved), 17-254=INCREASING GRAY, 255=WHITE
+# NOTE: negative colors (indicating particles stuck to wall) allowed.
+#
