@@ -2,7 +2,7 @@
 touch rpx.log init.ss 
 rpx << EOF
 
-y
+
 ../ceres
 0
 ../imp

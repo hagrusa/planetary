@@ -15,14 +15,14 @@ Aggregate ID		-1
 File number		1
 Filename		../imp
 Mass			1.703999e-12
-Bulk radius		5.067086e-07
-Bulk density		3.561695e+06
-Position		-5.680000e+02	+2.815000e+02	-3.200878e-24
-Velocity		+7.100000e+02	-1.289181e-22	-2.825603e-22
-Spin			-1.965984e-08	+1.574426e-09	+1.496856e-08
-Major axis		+0.000000	-0.000000	+1.000000
-Inter axis		+1.000000	+0.000326	-0.000000
-Minor axis		-0.000326	+1.000000	+0.000000
+Bulk radius		5.067068e-07
+Bulk density		3.531393e+06
+Position		-3.796845e-06	+1.881711e-06	-3.200878e-24
+Velocity		+2.383771e-02	-1.289181e-22	-2.825603e-22
+Spin			-2.050357e-14	+4.521915e-13	+6.765584e-14
+Major axis		-0.000000	+0.000000	+1.000000
+Inter axis		-0.018935	+0.999821	-0.000000
+Minor axis		+0.999821	+0.018935	+0.000000
 Color			3
 Aggregate ID		-1
 
