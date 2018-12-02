@@ -15,7 +15,7 @@
 ##########################################
 
 
-#from __future__ import print_function
+from __future__ import print_function
 #import psutil
 #from joblib import Parallel, delayed
 #import multiprocessing
@@ -60,7 +60,7 @@ for frame in ss_files:
 	N_disk = len(bound_ind)
 	M_disk = np.sum(data['mass'][bound_ind])
 
-	f.write(f"{t} {M_disk} {M_esc}")
+	f.write("{0} {1} {2}\n".format(t, M_disk, M_esc))
 f.close()
 
 
