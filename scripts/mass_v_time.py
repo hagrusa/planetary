@@ -47,7 +47,8 @@ r_T = np.mean(target['radius'])
 f = open(output, 'w')
 
 for frame in ss_files:
-	data, t = util.data(frame, units='cgs')
+        print("Current Frame: {0}".format(frame))
+	data, t = util.get_data(frame, units='cgs')
 	v2 = data['xdot']**2 + data['ydot']**2 + data['zdot']**2
 	r = np.sqrt(data['x']**2 + data['y']**2 + data['z']**2)
 	E_k = 0.5*data['mass']*v2

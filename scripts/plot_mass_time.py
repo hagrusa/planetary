@@ -53,9 +53,9 @@ M_disk = data[:,1]
 M_esc = data[:,2]
 
 
-
-plt.plot(t, M_disk/M_imp, label = 'M_disk/M_imp')
-plt.plot(t, M_esc/M_imp, label = 'M_esc/M_imp')
+M_tot = M_imp + M_T
+plt.plot(t, M_disk/M_tot, label = 'M_disk/M_imp')
+plt.plot(t, M_esc/M_tot, label = 'M_esc/M_imp')
 plt.legend(loc=0)
 plt.show()
 
