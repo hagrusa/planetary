@@ -70,7 +70,7 @@ for frame in ss_files:
 	in_disk = []
 
 	if len(bound_ind) > 1:
-		print(oi)
+		print(len(bound_ind))
 		for particle in bound_ind:
 			m = data['mass'][particle]
 			r2 = np.array([data['x'][particle], data['y'][particle], data['z'][particle]])
@@ -84,6 +84,8 @@ for frame in ss_files:
 			pericenter = a*(1-e)
 			if pericenter > R_T + r_T:
 				in_disk += [particle]	
+		print(in_disk)
+		print(len(in_disk))
 	
 
 
