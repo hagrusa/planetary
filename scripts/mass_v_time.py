@@ -44,14 +44,12 @@ R_T = np.max(np.sqrt(target['x']**2 + target['y']**2 + target['z']**2))
 r_T = np.mean(target['radius'])
 
 
-def in_disk()
-
 
 #calculate approx kinetic and potential energy of each particle in each frame
 f = open(output, 'w')
 
 for frame in ss_files:
-    sys.stdout.write('Current Frame: {0} of {1}\r'.format(frame, ss_files[-1]))
+	sys.stdout.write('Current Frame: {0} of {1}\r'.format(frame, ss_files[-1]))
 	sys.stdout.flush()
     #print("Current Frame: {0}".format(frame))
 	data, t = util.get_data(frame, units='cgs')
