@@ -70,6 +70,7 @@ for frame in ss_files:
 	in_disk = []
 
 	if len(bound_ind) > 1:
+		print(oi)
 		for particle in bound_ind:
 			m = data['mass'][particle]
 			r2 = np.array([data['x'][particle], data['y'][particle], data['z'][particle]])
