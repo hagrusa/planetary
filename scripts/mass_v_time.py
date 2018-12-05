@@ -67,15 +67,13 @@ for frame in ss_files:
 
 	in_disk = []
 
-	if len(bound_ind) > 0:
+	if len(bound_ind) > 1:
 		for particle in bound_ind:
 			m = data['mass'][particle]
 			r2 = np.array([data['x'][particle], data['y'][particle], data['z'][particle]])
 			r1 = np.array([0,0,0]) #assumes target still at origin
-			r2.shape = r1.shape
 			v1 = np.array([0,0,0])
 			v2 = np.array([data['xdot'][particle], data['ydot'][particle], data['zdot'][particle]])
-			v2.shape = v1.shape
 			OrbElem = util.orbital_elements(M_T, m, r1, r2, v1, v2)
 			a = OrbElem[0]
 			e = OrbElem[1]	
