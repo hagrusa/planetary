@@ -60,9 +60,11 @@ for frame in ss_files:
 	E = E_k + E_pot
 	bound_ind = np.where((E <= 0.0) & (r > R_T + r_T)) #indices where particles is on bound orbit, but not touching surface (approx)
 	unbound_ind = np.where(E > 0.0)
-	N_esc = len(unbound_ind[0])
+	bound_ind = bound_ind[0]
+	unbound_ind = unbound_ind[0]
+	N_esc = len(unbound_ind)
 	M_esc = np.sum(data['mass'][unbound_ind])
-	N_disk = len(bound_ind[0])
+	N_disk = len(bound_ind)
 	M_disk = np.sum(data['mass'][bound_ind])
 
 	in_disk = []
