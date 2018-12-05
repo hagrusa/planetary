@@ -43,11 +43,17 @@ M_T = np.sum(target['mass'])
 R_T = np.max(np.sqrt(target['x']**2 + target['y']**2 + target['z']**2))
 r_T = np.mean(target['radius'])
 
+
+def in_disk()
+
+
 #calculate approx kinetic and potential energy of each particle in each frame
 f = open(output, 'w')
 
 for frame in ss_files:
-        print("Current Frame: {0}".format(frame))
+    sys.stdout.write('Current Frame: {0} of {1}\r'.format(frame, ss_files[-1]))
+	sys.stdout.flush()
+    #print("Current Frame: {0}".format(frame))
 	data, t = util.get_data(frame, units='cgs')
 	v2 = data['xdot']**2 + data['ydot']**2 + data['zdot']**2
 	r = np.sqrt(data['x']**2 + data['y']**2 + data['z']**2)
@@ -61,7 +67,27 @@ for frame in ss_files:
 	N_disk = len(bound_ind)
 	M_disk = np.sum(data['mass'][bound_ind])
 
-	f.write("{0} {1} {2}\n".format(t, M_disk, M_esc))
+	in_disk = []
+	for particle in bound_ind:
+		m = data['mass'][particle]
+		r2 = np.array([data['x'][particle], data['y'][particle], data['z'][particle]])
+		r1 = np.array([0,0,0]) #assumes target still at origin
+		v1 = np.array([0,0,0])
+		v2 = np.array([data['xdot'][particle], data['ydot'][particle], data['zdot'][particle]])
+		OrbElem = util.orbital_elements(M_T, m, r1, r2, v1, v2)
+		a = OrbElem[0]
+		e = OrbElem[1]
+
+		pericenter = a*(1-e)
+		if pericenter > R_T + r_T:
+			in_disk += [particle]
+
+
+
+	N_disk_approx = len(in_disk)
+	M_disk_approx = np.sum(data['mass'][in_disk])
+
+	f.write("{0} {1} {2} {3} {4} {5} {6}\n".format(t, M_disk, M_esc, M_disk_approx, N_disk, N_esc, N_disk_approx))
 f.close()
 
 

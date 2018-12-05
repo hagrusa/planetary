@@ -16,7 +16,7 @@ import sys
 import glob
 import subprocess
 import argparse
-import dart_utilities as util
+import utilities as util
 
 
 parser = argparse.ArgumentParser(description='Rewrite ss.par for DEM restart. (current ss.par file will be renamed to old_ss.par)')
